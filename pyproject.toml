@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litellm-router"
+version = "1.0.0"
+description = "LiteLLM-based control gateway: routing, rate limiting, and budget tracking."
+requires-python = ">=3.10"
+dependencies = [
+    "litellm",
+    "python-dotenv==1.0.1",
+    "redis==5.2.1",
+    "crewai",
+    "crewai-tools",
+    "langchain-community",
+    "duckduckgo-search",
+    "pandas",
+    "numpy",
+    "scipy",
+    "mcp",
+    "httpx",
+    "fpdf2",
+    "qdrant-client>=1.18.0",
+    "pymupdf>=1.28.0",
+    "sentence-transformers",
+    "fastapi",
+    "uvicorn",
+    "python-multipart",
+    "fastembed",
+    "langchain-text-splitters",
+    "pymupdf4llm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.0.3",
+    "pytest-cov==6.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+litellm-router = "litellm_router.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*", "node_modules*", ".venv*", "venv*", ".turbo*", "Documents*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests", "agents/tests"]
+addopts = "--strict-markers"
+
+[tool.coverage.run]
+source = ["litellm_router"]

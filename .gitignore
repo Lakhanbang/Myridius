@@ -1,0 +1,24 @@
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Packaging / build artifacts
+*.egg-info/
+build/
+dist/
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sensitive credentials
+credentials.json
+
+# Runtime / generated output files
+output.txt
+*.log
+
+# Large binary / archive files
+*.zip

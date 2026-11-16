@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "mcp-document-reader": {
+      "command": "uvx",
+      "args": [
+        "--with",
+        "fastmcp",
+        "mcp-documents-reader"
+      ],
+      "env": {
+        "UV_LINK_MODE": "copy"
+      }
+    },
+    "prompts": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@codemcp/prompts"
+      ],
+      "env": {
+        "PROJECT_DIR": "C:\\Users\\lakhan\\OneDrive\\Desktop\\Myridius2\\dev_incubator\\r&d\\mcp_server"
+      }
+    }
+  }
+}
